@@ -1,0 +1,38 @@
+unit cp_info;
+
+interface
+
+uses
+//  FileUtil, Arrow,
+  Classes, SysUtils,  Forms, Controls, Graphics, Dialogs, StdCtrls;
+
+type
+
+  { TParamsConnectInfo }
+
+  TParamsConnectInfo = class(TForm)
+    Button1: TButton;
+    Memo1: TMemo;
+    procedure Memo1Change(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  ParamsConnectInfo: TParamsConnectInfo;
+
+implementation
+
+{$R *.lfm}
+
+{ TParamsConnectInfo }
+
+procedure TParamsConnectInfo.Memo1Change(Sender: TObject);
+begin
+
+end;
+
+end.
+

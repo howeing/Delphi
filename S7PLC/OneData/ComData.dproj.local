@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/07/23 12:57:46.000.847,=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/08/11 11:04:31.000.769,=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/08/11 11:05:54.000.498,C:\Users\hao.zhao\Desktop\S7PLC\OneData\unLayout.dfm=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2020/08/11 11:05:54.000.498,C:\Users\hao.zhao\Desktop\S7PLC\OneData\unLayout.pas=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/08/11 13:27:52.000.720,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\ComData.dproj=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2020/08/11 16:48:13.000.446,C:\Users\hao.zhao\Desktop\S7PLC\OneData\ComData.dproj=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\ComData.dproj</Transaction>
+    <Transaction>2020/09/11 08:35:40.000.726,=C:\Users\hao.zhao\Desktop\S7PLC\OneData\Unit1.pas</Transaction>
+    <Transaction>2020/09/11 08:35:48.000.423,C:\Users\hao.zhao\Desktop\S7PLC\OneData\unLayout.pas=</Transaction>
+    <Transaction>2020/09/11 08:36:07.000.943,C:\Users\hao.zhao\Desktop\S7PLC\OneData\unPython.pas=C:\Users\hao.zhao\Desktop\S7PLC\OneData\Unit1.pas</Transaction>
+    <Transaction>2020/09/11 08:36:07.000.943,C:\Users\hao.zhao\Desktop\S7PLC\OneData\unPython.dfm=C:\Users\hao.zhao\Desktop\S7PLC\OneData\Unit1.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

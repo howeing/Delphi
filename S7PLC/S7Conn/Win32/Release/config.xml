@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Doc>
+    <Project>
+		<prjName>Dunnage</prjName>
+		<prjCode>962718</prjCode>
+	</Project>
+	<PLC>
+		<plcIP>192.168.0.5</plcIP>
+		<plcRack>0</plcRack>
+		<plcSlot>2</plcSlot>
+	</PLC>
+	<FilePath>
+		<WorkDir>D:\Projects\Tengzhou\Info\pdf</WorkDir>
+		<plcExcel>D:\Projects\Tengzhou\Info\pdfplc_tags.xlsx</plcExcel>
+		<plcExcelAutoOpen>True</plcExcelAutoOpen>
+		<tagExcel>D:\Projects\Dunnage\Info\tags.xls</tagExcel>
+		<tagExcelAutoOpen>False</tagExcelAutoOpen>
+	</FilePath>
+	<App>
+		<ShowHint>True</ShowHint>
+		<tagsEdit>False</tagsEdit>
+		<plcEdit>True</plcEdit>
+		<MinDBno>3</MinDBno>
+		<MaxDBno>300</MaxDBno>
+		<!-- <PLC ip="172.19.33.16" rack="1" slot="4">
+		<PLC ip="172.19.33.16" rack="1" slot="4">S7-300</PLC> -->
+	</App>
+</Doc>

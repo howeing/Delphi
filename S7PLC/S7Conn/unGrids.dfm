@@ -1,0 +1,104 @@
+object frmGrids: TfrmGrids
+  Left = 0
+  Top = 0
+  Caption = 'frmGrids'
+  ClientHeight = 894
+  ClientWidth = 678
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object TabbedNotebook1: TTabbedNotebook
+    Left = 8
+    Top = 8
+    Width = 665
+    Height = 878
+    TabFont.Charset = DEFAULT_CHARSET
+    TabFont.Color = clBtnText
+    TabFont.Height = -11
+    TabFont.Name = 'Tahoma'
+    TabFont.Style = []
+    TabOrder = 0
+    object TTabPage
+      Left = 4
+      Top = 24
+      Caption = 'Default'
+      object Grid: TXLSGrid
+        Left = 8
+        Top = 8
+        Width = 641
+        Height = 799
+        HeaderColor = 16248036
+        GridlineColor = 15062992
+        ColCount = 32
+        DefaultColWidth = 68
+        DefaultRowHeight = 20
+        RowCount = 255
+        Options = [goFixedVertLine, goFixedHorzLine, goRangeSelect, goRowSizing, goColSizing, goEditing]
+        TabOrder = 0
+        ColWidths = (
+          21
+          63
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68)
+      end
+    end
+    object TTabPage
+      Left = 4
+      Top = 24
+      Caption = 'AAA'
+    end
+    object TTabPage
+      Left = 4
+      Top = 24
+      Caption = 'BBB'
+    end
+    object TTabPage
+      Left = 4
+      Top = 24
+      Caption = 'CCC'
+    end
+  end
+  object XLS: TXLSReadWriteII5
+    ComponentVersion = '6.00.47'
+    Version = xvExcel2007
+    DirectRead = False
+    DirectWrite = False
+    Left = 580
+    Top = 64
+  end
+end

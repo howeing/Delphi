@@ -1,0 +1,465 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  ActiveControl = btnReadplc
+  BorderStyle = bsDialog
+  Caption = 'Simatic'
+  ClientHeight = 765
+  ClientWidth = 592
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  ShowHint = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 575
+    Height = 750
+    TabOrder = 0
+    object plcGroupbox: TGroupBox
+      Left = 10
+      Top = 2
+      Width = 557
+      Height = 70
+      Caption = 'PLC'
+      TabOrder = 0
+      object lblInfo: TLabel
+        Left = 137
+        Top = 46
+        Width = 79
+        Height = 13
+        Caption = 'CPU Information'
+      end
+      object sharpStatus: TShape
+        Left = 90
+        Top = 35
+        Width = 15
+        Height = 15
+        Brush.Color = clRed
+        Shape = stCircle
+      end
+      object btnConnect: TButton
+        Left = 7
+        Top = 17
+        Width = 75
+        Height = 25
+        Hint = 'connect plc'
+        Caption = 'Connect'
+        TabOrder = 2
+        OnClick = btnConnectClick
+      end
+      object slotSpin: TSpinEdit
+        Left = 334
+        Top = 17
+        Width = 48
+        Height = 22
+        Hint = 'plc slot'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 0
+        Value = 2
+      end
+      object rackSpin: TSpinEdit
+        Left = 264
+        Top = 17
+        Width = 48
+        Height = 22
+        Hint = 'plc rack'
+        MaxValue = 0
+        MinValue = 0
+        TabOrder = 1
+        Value = 0
+      end
+      object btnDisconnect: TBitBtn
+        Left = 7
+        Top = 41
+        Width = 75
+        Height = 25
+        Hint = 'disconnect plc'
+        Caption = 'Disconnect'
+        Enabled = False
+        TabOrder = 3
+        OnClick = btnDisconnectClick
+      end
+      object chkDBFrom: TCheckBox
+        Left = 490
+        Top = 21
+        Width = 60
+        Height = 17
+        Hint = 'read from plc or buffer'
+        Caption = 'Buffer'
+        Enabled = False
+        TabOrder = 4
+        OnClick = chkDBFromClick
+      end
+      object ipAddrEdit: TEdit
+        Left = 124
+        Top = 17
+        Width = 121
+        Height = 21
+        Hint = 'plc ip address'
+        TabOrder = 5
+      end
+      object chkAppend: TCheckBox
+        Left = 412
+        Top = 21
+        Width = 65
+        Height = 17
+        Hint = 'append tags to list'
+        Caption = 'Overwrite'
+        TabOrder = 6
+        OnClick = chkAppendClick
+      end
+    end
+    object tabCtrl1: TTabControl
+      Left = 10
+      Top = 125
+      Width = 557
+      Height = 618
+      TabOrder = 1
+      Tabs.Strings = (
+        'Tags'
+        'Excel')
+      TabIndex = 0
+      OnChange = tabCtrl1Change
+      object lblCount: TLabel
+        Left = 90
+        Top = 5
+        Width = 3
+        Height = 13
+        Hint = 'tags number of list'
+      end
+      object Grid: TStringGrid
+        Left = 8
+        Top = 28
+        Width = 539
+        Height = 549
+        ColCount = 6
+        DefaultRowHeight = 25
+        FixedColor = clMedGray
+        RowCount = 2
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect]
+        TabOrder = 0
+        OnMouseDown = GridMouseDown
+        OnSelectCell = GridSelectCell
+      end
+      object xlsGrid: TXLSGrid
+        Left = 8
+        Top = 28
+        Width = 539
+        Height = 413
+        HeaderColor = 16248036
+        GridlineColor = 15062992
+        ColCount = 27
+        DefaultColWidth = 68
+        DefaultRowHeight = 25
+        RowCount = 255
+        Options = [goFixedVertLine, goFixedHorzLine]
+        ParentFont = False
+        PopupMenu = pmSave
+        ScrollBars = ssVertical
+        TabOrder = 1
+        Visible = False
+        ColWidths = (
+          21
+          63
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68
+          68)
+      end
+      object GroupBox4: TGroupBox
+        Left = 8
+        Top = 583
+        Width = 539
+        Height = 30
+        TabOrder = 3
+        object lblTagName: TLabel
+          Left = 15
+          Top = 8
+          Width = 55
+          Height = 13
+          Hint = 'toggle manual'
+          Caption = 'lblTagName'
+          OnClick = lblTagNameClick
+        end
+        object lblTagAddr: TLabel
+          Left = 291
+          Top = 8
+          Width = 51
+          Height = 13
+          Caption = 'lblTagAddr'
+        end
+        object lblTagBlock: TLabel
+          Left = 234
+          Top = 8
+          Width = 52
+          Height = 13
+          Caption = 'lblTagBlock'
+        end
+        object lblTagType: TLabel
+          Left = 353
+          Top = 8
+          Width = 52
+          Height = 13
+          Hint = 'read from plc'
+          Caption = 'lblTagType'
+          OnClick = lblTagTypeClick
+        end
+        object dbnoComboBox: TComboBox
+          Left = 116
+          Top = 4
+          Width = 45
+          Height = 21
+          Color = clMoneyGreen
+          TabOrder = 5
+          Visible = False
+          OnChange = dbnoComboBoxChange
+        end
+        object chkTagBool: TCheckBox
+          Left = 426
+          Top = 6
+          Width = 60
+          Height = 17
+          TabOrder = 0
+          Visible = False
+          OnClick = chkTagBoolClick
+        end
+        object edtTagFloat: TEdit
+          Left = 426
+          Top = 4
+          Width = 65
+          Height = 21
+          TabOrder = 1
+          TextHint = '0.0'
+          Visible = False
+          OnKeyPress = edtTagFloatKeyPress
+        end
+        object spinInt: TSpinEdit
+          Left = 426
+          Top = 3
+          Width = 75
+          Height = 22
+          MaxValue = 0
+          MinValue = 0
+          TabOrder = 2
+          Value = 0
+          Visible = False
+        end
+        object btnTagWrite: TBitBtn
+          Left = 507
+          Top = 2
+          Width = 25
+          Height = 25
+          Hint = 'write to plc'
+          Caption = 'W'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Microsoft YaHei'
+          Font.Style = []
+          NumGlyphs = 3
+          ParentFont = False
+          TabOrder = 3
+          Visible = False
+          OnClick = btnTagWriteClick
+        end
+        object edtAddress: TEdit
+          Left = 167
+          Top = 4
+          Width = 45
+          Height = 21
+          Hint = 'address '
+          Color = clMoneyGreen
+          TabOrder = 4
+          TextHint = '0.0'
+          Visible = False
+          OnKeyPress = edtTagFloatKeyPress
+        end
+      end
+    end
+    object GroupBox2: TGroupBox
+      Left = 10
+      Top = 78
+      Width = 557
+      Height = 41
+      TabOrder = 2
+      object lblXlsfile: TLabel
+        Left = 179
+        Top = 10
+        Width = 3
+        Height = 13
+      end
+      object btnOpen: TBitBtn
+        Left = 7
+        Top = 7
+        Width = 75
+        Height = 25
+        Hint = 'open plc monitor file'
+        Caption = 'Open'
+        TabOrder = 0
+        OnClick = btnOpenClick
+      end
+      object btnReadplc: TBitBtn
+        Left = 88
+        Top = 7
+        Width = 75
+        Height = 25
+        Hint = 'read tags from plc'
+        Caption = 'ReadPLC'
+        Enabled = False
+        TabOrder = 1
+        OnClick = btnReadplcClick
+      end
+      object edtRegular: TEdit
+        Left = 466
+        Top = 9
+        Width = 80
+        Height = 21
+        Hint = 'regular filter'
+        TabOrder = 2
+        OnChange = edtRegularChange
+        OnKeyPress = edtRegularKeyPress
+      end
+      object btnClear: TBitBtn
+        Left = 435
+        Top = 7
+        Width = 25
+        Height = 25
+        Hint = 'clear regular'
+        Caption = 'C'
+        Enabled = False
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Microsoft YaHei'
+        Font.Style = []
+        NumGlyphs = 4
+        ParentFont = False
+        Spacing = 0
+        TabOrder = 3
+        OnClick = btnClearClick
+      end
+      object pgbReadPlc: TProgressBar
+        Left = 187
+        Top = 30
+        Width = 360
+        Height = 10
+        BarColor = clMenuHighlight
+        BackgroundColor = clCream
+        Step = 1
+        TabOrder = 4
+      end
+    end
+    object GroupBox3: TGroupBox
+      Left = 10
+      Top = 78
+      Width = 557
+      Height = 41
+      TabOrder = 3
+      Visible = False
+      object lblReadFileName: TLabel
+        Left = 179
+        Top = 10
+        Width = 3
+        Height = 13
+      end
+      object lblWriteFileName: TLabel
+        Left = 450
+        Top = 10
+        Width = 3
+        Height = 13
+      end
+      object btntagplc: TBitBtn
+        Left = 7
+        Top = 7
+        Width = 75
+        Height = 25
+        Hint = 'open weinview tags file'
+        Caption = 'Open'
+        TabOrder = 0
+        OnClick = btntagplcClick
+      end
+      object btnConvert: TBitBtn
+        Left = 88
+        Top = 7
+        Width = 75
+        Height = 25
+        Hint = 'convert to plc monitor file'
+        Caption = 'Convert'
+        TabOrder = 1
+        OnClick = btnConvertClick
+        OnMouseDown = btnConvertMouseDown
+        OnMouseMove = btnConvertMouseMove
+        OnMouseUp = btnConvertMouseUp
+      end
+      object pgbWrite: TProgressBar
+        Left = 187
+        Top = 30
+        Width = 360
+        Height = 10
+        BarColor = clMenuHighlight
+        BackgroundColor = clCream
+        Step = 1
+        TabOrder = 2
+      end
+    end
+  end
+  object xlsOpenDlg: TOpenDialog
+    Filter = 'Excel Files|*.xls;*.xlsx'
+    Left = 544
+    Top = 304
+  end
+  object XLS: TXLSReadWriteII5
+    ComponentVersion = '6.00.47'
+    Version = xvExcel2007
+    DirectRead = True
+    DirectWrite = True
+    Left = 512
+    Top = 304
+  end
+  object bXml: TXMLDocument
+    Active = True
+    FileName = 'C:\Users\hao.zhao\Desktop\S7PLC\config.xml'
+    Left = 514
+    Top = 349
+  end
+  object pmSave: TPopupMenu
+    Left = 498
+    Top = 141
+    object N1: TMenuItem
+      Caption = 'Save'
+      Enabled = False
+      OnClick = N1Click
+    end
+  end
+end

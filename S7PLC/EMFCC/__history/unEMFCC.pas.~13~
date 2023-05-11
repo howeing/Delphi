@@ -1,0 +1,176 @@
+unit unEMFCC;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, Vcl.Buttons;
+
+type
+  TForm1 = class(TForm)
+    RadioGroup1: TRadioGroup;
+    PaintBox1: TPaintBox;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure RadioGroup1Click(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+var
+  HMetaFile: HENHMETAFILE; {EMF 文件句柄}
+  RadioGroupItemIndex: Integer = -1;
+
+//EnumEnhMetaFile 的回调函数
+function MyEnhMetaFunc(DisplaySurface: HDC; var MetafileTable: THandleTable;
+  var MetafileRecord: TEnhMetaRecord; ObjectCount: Integer; var Data: Longint
+  ): Integer; stdcall;
+var
+  itype: Integer;
+begin
+  case RadioGroupItemIndex of
+    1: itype := EMR_RECTANGLE;
+    2: itype := EMR_ELLIPSE;
+    3: itype := EMR_PIE;
+    4: itype := EMR_LINETO;
+    5: itype := EMR_EXTTEXTOUTA;
+  end;
+  if MetafileRecord.iType = itype then
+  begin
+    PlayEnhMetaFileRecord(DisplaySurface, MetafileTable, MetafileRecord, ObjectCount);
+    Result := 1;
+  end;
+end;
+
+procedure TForm1.BitBtn1Click(Sender: TObject);
+var
+  HMetaFile: HENHMETAFILE;
+  Path :string;
+begin
+  //Path := 'E:\Software\SoftwareToInstall\menuapp_lhs.emf';
+  Path := 'D:\ABC.emf';
+  HMetaFile := GetEnhMetaFile(PChar(Path));                      {打开}
+
+  PlayEnhMetaFile(PaintBox1.Canvas.Handle, HMetaFile, Rect(0,0,Self.Width,self.Height)); {重新绘制 EMF}
+  DeleteEnhMetaFile(HMetaFile);
+end;
+
+procedure TForm1.BitBtn2Click(Sender: TObject);
+const
+  n = #13#10;
+var
+  metaHeaderSize :integer;
+  metaHeader :PEnhMetaHeader;
+  strHeader :string;
+  buff :array[word] of Char;
+begin
+  metaHeaderSize :=GetEnhMetaFileHeader(HMetaFile, 0, nil);
+  GetMem(metaHeader, metaHeaderSize);
+  GetEnhMetaFileHeader(HMetaFile, metaHeaderSize, metaHeader);
+  strHeader :=
+         'iType:          %d' + n +
+         'nSize:          %d' + n +
+         'rclBounds:      %d,%d,%d,%d' + n +
+         'rclFrame:       %d,%d,%d,%d' + n +
+         'dSignature:     %d' + n +
+         'nVersion:       %d' + n +
+         'nBytes:         %d' + n +
+         'nRecords:       %d' + n +
+         'nHandles:       %d' + n +
+         //'sReserved:      %d' + n +
+         'nDescription:   %d' + n +
+         'offDescription: %d' + n +
+         'nPalEntries:    %d' + n +
+         'szlDevice:      %d,%d' + n +
+         'szlMillimeters: %d,%d' + n +
+         'cbPixelFormat:  %d' + n +
+         'offPixelFormat: %d' + n +
+         'bOpenGL:        %d' + n +
+         'Micrometers:    %d,%d';
+  wvsprintf(buff, PChar(strHeader), PChar(metaHeader));
+  ShowMessage(buff);
+  FreeMem(metaHeader);
+
+
+
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+var
+  MFile :TMetaFile;
+  MCanvas :TMetaFileCanvas;
+  LDC, MDC: HDC;
+begin
+
+  MFile :=TMetaFile.Create;
+  MFile.Height :=PaintBox1.Height;
+  Mfile.Width :=PaintBox1.Width;
+  MFile.LoadFromFile('E:\Software\SoftwareToInstall\menuapp_lhs.emf');
+
+  try
+    LDC :=GetDC(0);
+    MCanvas :=TMetaFileCanvas.Create(MFile, LDC);
+    MCanvas.Pen.Color :=clRed;
+    MCanvas.Pen.Width :=3;
+    MCanvas.Brush.Color :=clGreen;
+    MCanvas.MoveTo( 10,10);
+    //MCanvas.Rectangle(100,100,PaintBox1.Width div 2, PaintBox1.Height div 2);
+    MCanvas.LineTo(PaintBox1.Width div 2, PaintBox1.Height div 2);
+  finally
+    MCanvas.Free;
+    ReleaseDC(0,LDC);
+  end;
+  PaintBox1.Canvas.Draw(0,0,MFile);
+  MFile.SaveToFile('D:\ABC.EMF');
+  MFile.Free;
+
+  {文件建立在内存}
+  MDC := CreateEnhMetaFile(0, nil, nil, 'nil');
+  MoveToEx(MDC, 0, 0, nil);
+  LineTo(MDC, 100, 100);
+  {矩形}
+  Rectangle(MDC, 10, 10, 30, 30);
+  Rectangle(MDC, 60, 60, 90, 90);
+  {椭圆}
+  Ellipse(MDC, 30, 30, 50, 50);
+  Ellipse(MDC, 45, 45, 65, 65);
+
+  Pie(MDC,30,30,90,90,60,20,10,0);
+  Pie(MDC,130,30,190,90,60,200,10,0);
+
+  TextOutA(MDC,20,40,'Hello World!',SizeOf('Hello World!'));
+
+  HMetaFile := CloseEnhMetaFile(MDC);
+  DeleteObject(MDC);
+
+  RadioGroup1.Items.CommaText := '整个图元文件,其中的矩形,其中的椭圆,烧饼,线,文本';
+
+
+end;
+
+procedure TForm1.RadioGroup1Click(Sender: TObject);
+begin
+  Repaint;
+  RadioGroupItemIndex := RadioGroup1.ItemIndex;
+  if RadioGroupItemIndex = 0 then
+    PlayEnhMetaFile(Canvas.Handle, HMetaFile, ClientRect)
+  else
+    EnumEnhMetaFile(Canvas.Handle, HMetaFile, @MyEnhMetaFunc, nil, ClientRect);
+end;
+
+procedure TForm1.FormDestroy(Sender: TObject);
+begin
+  DeleteEnhMetaFile(HMetaFile);
+end;
+
+end.

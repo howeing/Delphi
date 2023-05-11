@@ -1,0 +1,198 @@
+object frmLayout: TfrmLayout
+  Left = 0
+  Top = 0
+  Caption = 'frmLayout'
+  ClientHeight = 806
+  ClientWidth = 669
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RxPanel1: TRxPanel
+    Left = 8
+    Top = 8
+    Width = 653
+    Height = 790
+    BevelOuter = bvNone
+    TabOrder = 0
+    TileImage = False
+    object RxLabel1: TRxLabel
+      Left = 240
+      Top = 272
+      Width = 46
+      Height = 13
+      Caption = 'RxLabel1'
+    end
+    object RxCalcEdit1: TRxCalcEdit
+      Left = 184
+      Top = 464
+      Width = 121
+      Height = 21
+      NumGlyphs = 2
+      TabOrder = 0
+    end
+    object CurrencyEdit1: TCurrencyEdit
+      Left = 168
+      Top = 536
+      Width = 121
+      Height = 21
+      Ctl3D = True
+      DisplayFormat = '0.00;0.00'
+      ParentCtl3D = False
+      TabOrder = 1
+    end
+    object ComboEdit1: TComboEdit
+      Left = 416
+      Top = 488
+      Width = 121
+      Height = 21
+      NumGlyphs = 1
+      TabOrder = 2
+      Text = 'ComboEdit1'
+    end
+    object FilenameEdit1: TFilenameEdit
+      Left = 456
+      Top = 560
+      Width = 121
+      Height = 21
+      NumGlyphs = 1
+      TabOrder = 3
+      Text = 'FilenameEdit1'
+    end
+    object DirectoryEdit1: TDirectoryEdit
+      Left = 480
+      Top = 616
+      Width = 121
+      Height = 21
+      NumGlyphs = 1
+      TabOrder = 4
+      Text = 'DirectoryEdit1'
+    end
+    object DateEdit1: TDateEdit
+      Left = 224
+      Top = 616
+      Width = 121
+      Height = 21
+      NumGlyphs = 2
+      TabOrder = 5
+    end
+    object RxCheckBox1: TRxCheckBox
+      Left = 368
+      Top = 256
+      Width = 97
+      Height = 17
+      Caption = 'RxCheckBox1'
+      TabOrder = 6
+      WordWrap = True
+      HorizontalAlignment = taLeftJustify
+      VerticalAlignment = taAlignTop
+      Style = vsNormal
+    end
+    object RxRadioButton1: TRxRadioButton
+      Left = 360
+      Top = 312
+      Width = 113
+      Height = 17
+      Caption = 'RxRadioButton1'
+      TabOrder = 7
+      WordWrap = True
+      HorizontalAlignment = taLeftJustify
+      VerticalAlignment = taAlignTop
+      Style = vsNormal
+    end
+    object RxAnimBitBtn1: TRxAnimBitBtn
+      Left = 368
+      Top = 352
+      Width = 75
+      Height = 25
+      Caption = 'RxAnimBitBtn1'
+      TabOrder = 8
+      OnClick = RxAnimBitBtn1Click
+      Animated = False
+      Interval = 100
+      AnimOrientation = agoHorizontal
+    end
+    object RxSpinEdit1: TRxSpinEdit
+      Left = 360
+      Top = 400
+      Width = 121
+      Height = 21
+      Value = 2.000000000000000000
+      TabOrder = 9
+    end
+    object RxTimeEdit1: TRxTimeEdit
+      Left = 208
+      Top = 664
+      Width = 192
+      Height = 21
+      TabOrder = 10
+      UseDockManager = True
+    end
+    object RxDice1: TRxDice
+      Left = 56
+      Top = 432
+      Width = 66
+      Height = 66
+      Rotate = False
+      ShowFocus = False
+      TabOrder = 11
+      Value = 6
+    end
+    object RxAnimBitBtn2: TRxAnimBitBtn
+      Left = 496
+      Top = 352
+      Width = 75
+      Height = 25
+      Caption = 'RxAnimBitBtn2'
+      TabOrder = 12
+      OnClick = RxAnimBitBtn2Click
+      Animated = False
+      Interval = 100
+      AnimOrientation = agoHorizontal
+    end
+    object RxAnimBitBtn3: TRxAnimBitBtn
+      Left = 128
+      Top = 352
+      Width = 75
+      Height = 25
+      Caption = 'RxAnimBitBtn3'
+      TabOrder = 13
+      OnClick = RxAnimBitBtn3Click
+      Animated = False
+      Interval = 100
+      AnimOrientation = agoHorizontal
+    end
+  end
+  object RxTimerList1: TRxTimerList
+    Active = True
+    Left = 200
+    Top = 176
+    object RxTimerEvent1: TRxTimerEvent
+      Enabled = False
+      Interval = 1
+      OnTimer = RxTimerEvent1Timer
+    end
+  end
+  object cs: TCodeSiteLogger
+    Destination = csDest
+    Left = 400
+    Top = 120
+  end
+  object csDest: TCodeSiteDestination
+    Viewer.Active = True
+    LogFile.LogByDateFormat = 'yyyymmdd'
+    TCP.Host = 'localhost'
+    TCP.Port = 3434
+    TCP.RemoteDestinationString = 'Viewer'
+    UDP.Host = 'localhost'
+    UDP.Port = 3435
+    UDP.RemoteDestinationString = 'Viewer'
+    Left = 480
+    Top = 120
+  end
+end

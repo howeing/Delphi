@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/09/23 15:47:34.000.535,=C:\Users\hmi\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2020/09/23 15:47:50.000.612,C:\Users\hmi\Documents\Embarcadero\Studio\Projects\unEMFCC.pas=C:\Users\hmi\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2020/09/23 15:47:50.000.612,C:\Users\hmi\Documents\Embarcadero\Studio\Projects\unEMFCC.dfm=C:\Users\hmi\Documents\Embarcadero\Studio\Projects\Unit3.dfm</Transaction>
+    <Transaction>2020/09/23 15:48:31.000.654,C:\Users\hmi\Desktop\S7PLC\EMFCC\EMFCC.dproj=C:\Users\hmi\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2020/10/12 12:43:11.000.502,C:\Users\hmi\Documents\Embarcadero\Studio\Projects\unEMFCC.pas=</Transaction>
+    <Transaction>2020/10/12 12:43:50.000.567,=C:\Users\hmi\Desktop\S7PLC\EMFCC\unEMFCC.pas</Transaction>
+    <Transaction>2020/10/13 08:45:27.000.947,=C:\Users\hmi\Desktop\S7PLC\EMFCC\Unit2.pas</Transaction>
+    <Transaction>2020/10/13 08:46:00.000.161,C:\Users\hmi\Desktop\S7PLC\EMFCC\unEMFTtest.dfm=C:\Users\hmi\Desktop\S7PLC\EMFCC\Unit2.dfm</Transaction>
+    <Transaction>2020/10/13 08:46:00.000.161,C:\Users\hmi\Desktop\S7PLC\EMFCC\unEMFTtest.pas=C:\Users\hmi\Desktop\S7PLC\EMFCC\Unit2.pas</Transaction>
+    <Transaction>2020/10/13 08:46:08.000.360,C:\Users\hmi\Desktop\S7PLC\EMFCC\unEMFTest.dfm=C:\Users\hmi\Desktop\S7PLC\EMFCC\unEMFTtest.dfm</Transaction>
+    <Transaction>2020/10/13 08:46:08.000.360,C:\Users\hmi\Desktop\S7PLC\EMFCC\unEMFTest.pas=C:\Users\hmi\Desktop\S7PLC\EMFCC\unEMFTtest.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,14 @@
+program Layout;
+
+uses
+  Vcl.Forms,
+  unTengzhou in 'unTengzhou.pas' {frmLayout};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmTengzhou, frmTengzhou);
+  Application.Run;
+end.

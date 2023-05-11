@@ -1,0 +1,27 @@
+unit unGrids;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.TabNotBk, Vcl.Tabs,
+  XLSSheetData5, XLSReadWriteII5, XLSGrid5, Vcl.Grids;
+
+type
+  TfrmGrids = class(TForm)
+    TabbedNotebook1: TTabbedNotebook;
+    XLSGrid1: TXLSGrid;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmGrids: TfrmGrids;
+
+implementation
+
+{$R *.dfm}
+
+end.

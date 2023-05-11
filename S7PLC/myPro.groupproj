@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D9FFF668-AFDE-4D03-8AC6-95ED7BBB8363}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="S7Conn\S7conn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OneData\ComData.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="EMFCC\EMFCC.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SocketClient\SocketClient.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SocketServer\SocketServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GlassGUI\Layout.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="S7conn">
+        <MSBuild Projects="S7Conn\S7conn.dproj"/>
+    </Target>
+    <Target Name="S7conn:Clean">
+        <MSBuild Projects="S7Conn\S7conn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="S7conn:Make">
+        <MSBuild Projects="S7Conn\S7conn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ComData">
+        <MSBuild Projects="OneData\ComData.dproj"/>
+    </Target>
+    <Target Name="ComData:Clean">
+        <MSBuild Projects="OneData\ComData.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ComData:Make">
+        <MSBuild Projects="OneData\ComData.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EMFCC">
+        <MSBuild Projects="EMFCC\EMFCC.dproj"/>
+    </Target>
+    <Target Name="EMFCC:Clean">
+        <MSBuild Projects="EMFCC\EMFCC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EMFCC:Make">
+        <MSBuild Projects="EMFCC\EMFCC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SocketClient">
+        <MSBuild Projects="SocketClient\SocketClient.dproj"/>
+    </Target>
+    <Target Name="SocketClient:Clean">
+        <MSBuild Projects="SocketClient\SocketClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SocketClient:Make">
+        <MSBuild Projects="SocketClient\SocketClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SocketServer">
+        <MSBuild Projects="SocketServer\SocketServer.dproj"/>
+    </Target>
+    <Target Name="SocketServer:Clean">
+        <MSBuild Projects="SocketServer\SocketServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SocketServer:Make">
+        <MSBuild Projects="SocketServer\SocketServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Layout">
+        <MSBuild Projects="GlassGUI\Layout.dproj"/>
+    </Target>
+    <Target Name="Layout:Clean">
+        <MSBuild Projects="GlassGUI\Layout.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Layout:Make">
+        <MSBuild Projects="GlassGUI\Layout.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="S7conn;ComData;EMFCC;SocketClient;SocketServer;Layout"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="S7conn:Clean;ComData:Clean;EMFCC:Clean;SocketClient:Clean;SocketServer:Clean;Layout:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="S7conn:Make;ComData:Make;EMFCC:Make;SocketClient:Make;SocketServer:Make;Layout:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

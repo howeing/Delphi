@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/09/14 11:58:44.000.899,=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/09/14 11:58:58.000.518,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.pas</Transaction>
+    <Transaction>2020/09/14 11:58:58.000.518,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.dfm</Transaction>
+    <Transaction>2020/09/14 11:59:45.000.139,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\SocketServer.dproj</Transaction>
+    <Transaction>2020/09/14 12:03:42.000.579,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.dfm=</Transaction>
+    <Transaction>2020/09/14 12:03:54.000.484,=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2020/09/14 12:04:00.000.344,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.dfm</Transaction>
+    <Transaction>2020/09/14 12:04:00.000.344,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.pas</Transaction>
+    <Transaction>2020/09/14 12:35:27.000.124,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.dfm=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unClient.dfm</Transaction>
+    <Transaction>2020/09/14 12:35:27.000.124,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.pas=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unClient.pas</Transaction>
+    <Transaction>2020/09/14 12:36:27.000.696,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.pas=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unClient.pas</Transaction>
+    <Transaction>2020/09/14 12:36:27.000.681,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unClient.dfm=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.dfm</Transaction>
+    <Transaction>2020/09/14 12:36:27.000.696,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.dfm=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unClient.dfm</Transaction>
+    <Transaction>2020/09/14 12:36:27.000.681,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unClient.pas=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.pas</Transaction>
+    <Transaction>2020/09/14 12:36:49.000.937,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unClient.pas=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.pas</Transaction>
+    <Transaction>2020/09/14 12:36:49.000.937,C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unClient.dfm=C:\Users\hao.zhao\Documents\Embarcadero\Studio\Projects\unServer.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,102 @@
+﻿unit unPublic;
+
+interface
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics, System.Math,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, RegularExpressions, System.StrUtils,
+  Vcl.Samples.Spin, Vcl.Buttons, S7Simatic, Vcl.Grids, Vcl.ExtCtrls,Vcl.Touch.Keyboard, Vcl.ComCtrls,
+  Xml.xmldom, Xml.XMLIntf, Xml.XMLDoc;
+
+
+function GetXmlProject(nNode: IXMLNode): string;
+
+implementation
+
+function GetXmlProject(nNode: IXMLNode): string;
+var
+  i, j: integer;
+  s :string;
+begin
+  for i:=0 to nNode.ChildNodes.Count-1 do
+  begin
+    s := s + '<' + nNode.ChildNodes.Nodes[i].NodeName;
+    for j:=0 to nNode.ChildNodes[i].AttributeNodes.Count-1 do
+    begin
+      s := s + ' '+ nNode.ChildNodes[i].AttributeNodes[j].NodeName;
+      s := s + '="'+ nNode.ChildNodes[i].AttributeNodes[j].NodeValue +'"';
+    end;
+    s := s + '>';
+    if nNode.ChildNodes.Nodes[i].IsTextElement then
+      s := s + nNode.ChildNodes.Nodes[i].Text;
+    if nNode.HasChildNodes and not nNode.ChildNodes.Nodes[i].IsTextElement then
+    begin
+      s := s +  #13 + #10;
+      GetXmlProject(nNode.ChildNodes.Nodes[i]);
+    end;
+    s := s + '</'+ nNode.ChildNodes.Nodes[i].NodeName +'>' + #13 + #10;
+  end;
+  result := s;
+end;
+
+
+
+//给出一个 XML 节点，遍历所有子节点-不包括起始节点
+//GetXmlTree1(oXml.ChildNodes.FindNode('root'));
+function GetXmlTree1(nNode: IXMLNode): string;
+var
+  i, j: integer;
+  s :string;
+begin
+  for i:=0 to nNode.ChildNodes.Count-1 do
+  begin
+    s := s + '<' + nNode.ChildNodes.Nodes[i].NodeName;
+    for j:=0 to nNode.ChildNodes[i].AttributeNodes.Count-1 do
+    begin
+      s := s + ' '+ nNode.ChildNodes[i].AttributeNodes[j].NodeName;
+      s := s + '="'+ nNode.ChildNodes[i].AttributeNodes[j].NodeValue +'"';
+    end;
+    s := s + '>';
+    if nNode.ChildNodes.Nodes[i].IsTextElement then
+      s := s + nNode.ChildNodes.Nodes[i].Text;
+    if nNode.HasChildNodes and not nNode.ChildNodes.Nodes[i].IsTextElement then
+    begin
+      s := s +  #13 + #10;
+      GetXmlTree1(nNode.ChildNodes.Nodes[i]);
+    end;
+    s := s + '</'+ nNode.ChildNodes.Nodes[i].NodeName +'>' + #13 + #10;
+  end;
+  result := s;
+end;
+{----------------------------------------------------------------------}
+//给出一个 XML 节点，遍历所给的节点及其下属的所有子节点
+//s := GetXmlTree2(oXml.ChildNodes.FindNode('root'));
+function GetXmlTree2(nNode: IXMLNode): string;
+var
+  i, j: integer;
+  s :string;
+begin
+  s := s + '<' + nNode.NodeName;
+  for j:=0 to nNode.AttributeNodes.Count-1 do
+  begin
+    s := s + ' '+ nNode.AttributeNodes[j].NodeName;
+    s := s + '="'+ nNode.AttributeNodes[j].NodeValue +'"';
+  end;
+  s := s + '>';
+  if nNode.IsTextElement then
+    s := s + nNode.Text
+  else
+  begin
+    s := s + #13 + #10;
+    if nNode.HasChildNodes then
+      for i:=0 to nNode.ChildNodes.Count-1 do
+      begin
+        GetXmlTree2(nNode.ChildNodes.Nodes[i]);
+      end;
+  end;
+  s := s + '</' + nNode.NodeName + '>'+ #13 + #10;
+  result := s;
+end;
+
+
+
+end.

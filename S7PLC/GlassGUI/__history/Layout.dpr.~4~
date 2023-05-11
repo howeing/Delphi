@@ -1,0 +1,15 @@
+program Layout;
+
+uses
+  Vcl.Forms,
+  unZibo in 'unZibo.pas' {frmZibo};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmZibo, frmZibo);
+  Application.CreateForm(TfrmZibo, frmZibo);
+  Application.Run;
+end.

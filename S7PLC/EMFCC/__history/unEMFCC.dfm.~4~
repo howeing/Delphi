@@ -1,0 +1,52 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 680
+  ClientWidth = 1197
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PaintBox1: TPaintBox
+    Left = 336
+    Top = 72
+    Width = 753
+    Height = 441
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 216
+    Top = 8
+    Width = 101
+    Height = 113
+    Caption = 'RadioGroup1'
+    TabOrder = 0
+    OnClick = RadioGroup1Click
+  end
+  object BitBtn1: TBitBtn
+    Left = 888
+    Top = 616
+    Width = 75
+    Height = 25
+    Caption = 'Load emf'
+    TabOrder = 1
+    OnClick = BitBtn1Click
+  end
+  object BitBtn2: TBitBtn
+    Left = 1014
+    Top = 616
+    Width = 75
+    Height = 25
+    Caption = 'Header info'
+    TabOrder = 2
+    OnClick = BitBtn2Click
+  end
+end

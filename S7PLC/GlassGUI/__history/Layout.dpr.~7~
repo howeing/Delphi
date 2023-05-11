@@ -1,0 +1,15 @@
+program Layout;
+
+uses
+  Vcl.Forms,
+  unZibo in 'unZibo.pas' {frmZibo},
+  unTengzhou in 'unTengzhou.pas' {frmTengzhou};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmTengzhou, frmTengzhou);
+  Application.Run;
+end.
