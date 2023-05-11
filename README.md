@@ -1,3 +1,2 @@
 # Delphi
 # Jbuilder
-# Python3
