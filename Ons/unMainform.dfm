@@ -36,5 +36,13 @@ object Form1: TForm1
       Caption = 'pnlBottom'
       TabOrder = 1
     end
+    object pnlLeft: TPanel
+      Left = 24
+      Top = 120
+      Width = 185
+      Height = 41
+      Caption = 'pnlLeft'
+      TabOrder = 2
+    end
   end
 end

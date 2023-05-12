@@ -11,6 +11,7 @@ type
     pnlLayout: TPanel;
     pnlTop: TPanel;
     pnlBottom: TPanel;
+    pnlLeft: TPanel;
   private
     { Private declarations }
   public

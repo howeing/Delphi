@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2023/05/12 12:51:48.859,=D:\Delphi\Unit1.pas</Transaction>
-    <Transaction>2023/05/12 12:52:46.910,D:\GitTest\Delphi\unMainform.dfm=D:\Delphi\Unit1.dfm</Transaction>
-    <Transaction>2023/05/12 12:52:46.910,D:\GitTest\Delphi\unMainform.pas=D:\Delphi\Unit1.pas</Transaction>
-    <Transaction>2023/05/12 12:53:04.662,D:\GitTest\Delphi\Ons\Ones.dproj=D:\Delphi\Project1.dproj</Transaction>
-    <Transaction>2023/05/12 12:53:16.152,D:\GitTest\Delphi\unMainform.pas=</Transaction>
-    <Transaction>2023/05/12 12:53:35.284,=D:\GitTest\Delphi\Ons\unMainform.pas</Transaction>
+	<Transactions>
+    <Transaction>2023/05/12 12:51:48.000.859,=D:\Delphi\Unit1.pas</Transaction>
+    <Transaction>2023/05/12 12:52:46.000.910,D:\Delphi\Unit1.pas=D:\GitTest\Delphi\unMainform.pas</Transaction>
+    <Transaction>2023/05/12 12:52:46.000.910,D:\Delphi\Unit1.dfm=D:\GitTest\Delphi\unMainform.dfm</Transaction>
+    <Transaction>2023/05/12 12:53:04.000.662,D:\Delphi\Project1.dproj=D:\GitTest\Delphi\Ons\Ones.dproj</Transaction>
+    <Transaction>2023/05/12 12:53:16.000.152,D:\GitTest\Delphi\unMainform.pas=</Transaction>
+    <Transaction>2023/05/12 12:53:35.000.284,=D:\GitTest\Delphi\Ons\unMainform.pas</Transaction>
   </Transactions>
 </BorlandProject>
