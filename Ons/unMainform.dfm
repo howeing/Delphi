@@ -20,9 +20,13 @@ object Form1: TForm1
     Height = 299
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 136
-    ExplicitTop = 72
-    ExplicitWidth = 337
-    ExplicitHeight = 129
+    object pnlTop: TPanel
+      Left = 200
+      Top = 144
+      Width = 185
+      Height = 41
+      Caption = 'pnlTop'
+      TabOrder = 0
+    end
   end
 end

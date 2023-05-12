@@ -9,6 +9,7 @@ uses
 type
   TForm1 = class(TForm)
     pnlLayout: TPanel;
+    pnlTop: TPanel;
   private
     { Private declarations }
   public
