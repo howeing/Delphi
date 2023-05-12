@@ -21,12 +21,20 @@ object Form1: TForm1
     Align = alClient
     TabOrder = 0
     object pnlTop: TPanel
-      Left = 200
-      Top = 144
+      Left = 216
+      Top = 8
       Width = 185
       Height = 41
       Caption = 'pnlTop'
       TabOrder = 0
+    end
+    object pnlBottom: TPanel
+      Left = 216
+      Top = 224
+      Width = 185
+      Height = 41
+      Caption = 'pnlBottom'
+      TabOrder = 1
     end
   end
 end

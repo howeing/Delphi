@@ -10,6 +10,7 @@ type
   TForm1 = class(TForm)
     pnlLayout: TPanel;
     pnlTop: TPanel;
+    pnlBottom: TPanel;
   private
     { Private declarations }
   public
