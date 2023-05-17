@@ -1,0 +1,95 @@
+program types;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+type
+
+  TSample<T> = record
+    strict private
+      F1 :T;
+      procedure SetF1(value:T);
+      function GetF1():T;
+
+    public
+      property P1: T read GetF1 write SetF1;
+  end;
+
+  perArray<T> = array of T;
+
+  TAncestors<T> = class
+
+  public
+    constructor Create(); override;
+
+  end;
+
+var
+  oriStr, resultStr : string;
+  i :byte;
+
+  perAge :perArray<byte>;
+  perName :perArray<String>;
+  perSex: perArray<boolean>;
+
+
+function TSample<T>.GetF1:T;
+begin
+  Result :=Self.P1
+end;
+
+procedure TSample<T>.SetF1(value:T);
+begin
+  F1 :=value;
+
+end;
+
+var
+  IntegerObj :TSample<integer> ;
+  StringObj :TSample<String> ;
+begin
+  try
+//    oriStr :='ABCDEFGHIJKLMNOPQ';
+//    i :=0;
+//    while i < Length(oriStr)-1 do
+//    begin
+//      resultStr :=resultStr + oriStr[2*i+1];
+//      Inc(i);
+//    end;
+//    Writeln(resultStr);
+//    Readln;
+
+//    IntegerObj.P1 :=890;
+//    StringObj.P1 :='Delphi + JBuiler';
+//    Writeln(IntegerObj.p1);
+//    Writeln(StringObj.P1);
+//    Readln;
+
+    TAncestors<T>.Create;
+
+    perName :=['baobao','dabao','xiaobao'];
+    perAge :=[39,11,7];
+    perSex :=[False,True,true];
+    for i := Low(perName) to High(perName) do
+    begin
+      Write(perName[i]);
+      write('  ');
+      Write(perSex[i]);
+      write('  ');
+      Write(perAge[i]);
+      writeln('  ');
+    end;
+    Writeln('press any key to continue ......');
+    readln;
+
+
+    { TODO -oUser -cConsole Main : Insert code here }
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

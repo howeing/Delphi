@@ -30,19 +30,36 @@ object Form1: TForm1
     end
     object pnlBottom: TPanel
       Left = 216
-      Top = 224
+      Top = 248
       Width = 185
       Height = 41
       Caption = 'pnlBottom'
       TabOrder = 1
     end
     object pnlLeft: TPanel
-      Left = 24
+      Left = 8
       Top = 120
       Width = 185
       Height = 41
       Caption = 'pnlLeft'
       TabOrder = 2
+    end
+    object pnlRight: TPanel
+      Left = 442
+      Top = 120
+      Width = 185
+      Height = 41
+      Caption = 'pnlRight'
+      TabOrder = 3
+    end
+    object btnAction: TButton
+      Left = 280
+      Top = 129
+      Width = 75
+      Height = 25
+      Caption = 'btnAction'
+      TabOrder = 4
+      OnClick = btnActionClick
     end
   end
 end
